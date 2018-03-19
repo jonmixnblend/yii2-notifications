@@ -34,7 +34,7 @@ class NotificationsAsset extends AssetBundle
      * @var array The widget css files
      */
     public $css = [
-        'notifications.less',
+        'notifications.css',
     ];
 
     /**
@@ -79,7 +79,8 @@ class NotificationsAsset extends AssetBundle
         $filename = sprintf($pattern, $locale);
         if (file_exists(Yii::getAlias(self::$assetsDirectory) . $filename)) {
             return $filename;
-        } else { // try harder by shortening the locale
+        } else {
+            // try harder by shortening the locale
             $locale = substr($locale, 0, 2);
             $filename = sprintf($pattern, $locale);
             if (file_exists(Yii::getAlias(self::$assetsDirectory) . $filename)) {
